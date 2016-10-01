@@ -5,6 +5,7 @@ RUN \
 	DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip && \
 	sudo apt-get -y install libyaml-dev python-dev python3-dev && \
 	pip install --upgrade pip
+RUN pip install -U setuptools
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 RUN pip install -qr /tmp/requirements.txt
 ADD ./webapp /opt/webapp/
