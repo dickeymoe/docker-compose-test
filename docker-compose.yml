@@ -5,8 +5,12 @@ version: '2'
 services: 
   app: 
     build: webapp
+    image: webapp
+    ports: 
+     - "5000:5000"
   proxy: 
     build: docker-nginx
+    image: nginx
     ports: 
      - "80:80" 
 
