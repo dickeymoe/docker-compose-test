@@ -6,11 +6,15 @@ services:
   app: 
     build: webapp
     image: webapp
+#    links: 
+#     - "proxy:nginx"
     ports: 
      - "5000:5000"
   proxy: 
     build: docker-nginx
     image: nginx
     ports: 
-     - "80:80" 
+     - "80:80"
+#    links: 
+#     - "app:webapp"  
 
